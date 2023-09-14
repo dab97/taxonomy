@@ -162,7 +162,7 @@ export function Editor({ post }: EditorProps) {
           <TextareaAutosize
             autoFocus
             id="title"
-            defaultValue={post.title}
+            // defaultValue={post.title}
             placeholder="Post title"
             className="w-full resize-none appearance-none overflow-hidden bg-transparent text-5xl font-bold focus:outline-none"
             {...register("title")}
