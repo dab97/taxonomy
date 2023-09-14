@@ -19,8 +19,8 @@ export default async function MarketingLayout({
   const session = await getServerSession(authOptions)
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="sticky top-0 z-40 supports-backdrop-blur:bg-background/60 backdrop-blur bg-background/75 w-full border-b">
-        <div className=" container mx-auto flex h-16 items-center justify-between space-x-0 content-between py-6">
+      <header className="supports-backdrop-blur:bg-background/60 sticky top-0 z-40 flex w-full border-b bg-background/75 backdrop-blur">
+        <div className=" container mx-auto flex h-16 content-between items-center justify-between space-x-0 py-6">
           <MainNav items={marketingConfig.mainNav} />
           <nav>
             {session?.user ? (

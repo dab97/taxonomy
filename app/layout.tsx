@@ -1,5 +1,6 @@
 import { Inter as FontSans } from "next/font/google"
 import localFont from "next/font/local"
+import Head from 'next/head'
 
 import "@/styles/globals.css"
 import { siteConfig } from "@/config/site"
@@ -74,7 +75,10 @@ export const metadata = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head />
+      <Head>
+        <title>{metadata.title.template}</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",

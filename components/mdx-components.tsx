@@ -48,7 +48,7 @@ const components = {
   h5: ({ className, ...props }) => (
     <h5
       className={cn(
-        "mt-8 scroll-m-20 text-lg font-semibold tracking-tight",
+        "text-lg mt-8 scroll-m-20 font-semibold tracking-tight",
         className
       )}
       {...props}
@@ -71,7 +71,7 @@ const components = {
   ),
   p: ({ className, ...props }) => (
     <p
-      className={cn("text-sm md:text-base leading-7 [&:not(:first-child)]:mt-6", className)}
+      className={cn("text-sm leading-7 md:text-base [&:not(:first-child)]:mt-6", className)}
       {...props}
     />
   ),
@@ -102,10 +102,10 @@ const components = {
   //   // eslint-disable-next-line @next/next/no-img-element
   //   <img className={cn("rounded-md border", className)} alt={alt} {...props} />
   // ),
-  Image: (props: ImageProps) => <Image {...props} />,
+  Image: (props: ImageProps) => <Image {...props} alt=""/>,
   hr: ({ ...props }) => <hr className="my-4 md:my-8" {...props} />,
   table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
-    <div className="text-sm md:text-base my-6 w-full overflow-y-auto">
+    <div className="my-6 w-full overflow-y-auto text-sm md:text-base">
       <table className={cn("w-full", className)} {...props} />
     </div>
   ),

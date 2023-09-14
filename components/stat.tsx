@@ -40,7 +40,7 @@ export function Stat({
   return (
     <div
       className={cn(
-        "border border-slate-200 rounded-md grid grid-cols-[1fr_100px] gap-4 items-center p-6",
+        "grid grid-cols-[1fr_100px] items-center gap-4 rounded-md border border-slate-200 p-6",
         className
       )}
       {...props}
@@ -48,7 +48,7 @@ export function Stat({
       <div className="space-y-2">
         <h2
           ref={ref}
-          className="text-5xl lg:text-6xl tracking-tighter font-bold"
+          className="lg:text-6xl text-5xl font-bold tracking-tighter"
         >
           {from}
         </h2>
