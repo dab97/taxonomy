@@ -1,0 +1,36 @@
+# -----------------------------------------------------------------------------
+# App
+# -----------------------------------------------------------------------------
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+
+# -----------------------------------------------------------------------------
+# Authentication (NextAuth.js)
+# -----------------------------------------------------------------------------
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=jniYvTKG6p7hoNM61AqdJgVVZxZdLiG3lAVVjKeClAU=
+
+GITHUB_CLIENT_ID=dc001f7a2559754b9db7
+GITHUB_CLIENT_SECRET=b08029805f187bfca98373fd861bf7d72e80b78b
+GITHUB_ACCESS_TOKEN=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
+
+GOOGLE_CLIENT_ID=1029774919065-2tvm98ga3mdnk4ak5sj31odlceetphrt.apps.googleusercontent.com
+GOOGLE_CLIENT_SECRET=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
+
+# -----------------------------------------------------------------------------
+# Database (MySQL - PlanetScale)
+# -----------------------------------------------------------------------------cl
+DATABASE_URL="mysql://root@localhost:3306/taxonomy?schema=public"
+# -----------------------------------------------------------------------------
+# Email (Postmark)
+# -----------------------------------------------------------------------------
+SMTP_FROM=12
+POSTMARK_API_TOKEN=12
+POSTMARK_SIGN_IN_TEMPLATE=12
+POSTMARK_ACTIVATION_TEMPLATE=12
+
+# -----------------------------------------------------------------------------
+# Subscriptions (Stripe)
+# -----------------------------------------------------------------------------
+STRIPE_API_KEY=123
+STRIPE_WEBHOOK_SECRET=123
+STRIPE_PRO_MONTHLY_PLAN_ID=123
