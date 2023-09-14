@@ -11,8 +11,8 @@ datasource db {
 }
 
 model Account {
-  id                Int      @id @default(autoincrement())
-  userId            Int
+  id                String   @id @default(cuid())
+  userId            String
   type              String
   provider          String
   providerAccountId String
@@ -24,25 +24,26 @@ model Account {
   id_token          String?  @db.Text
   session_state     String?
   createdAt         DateTime @default(now()) @map(name: "created_at")
-  updatedAt         DateTime @updatedAt @map(name: "updated_at")  
-  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade) 
+  updatedAt         DateTime @default(now()) @map(name: "updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
   @@map(name: "accounts")
 }
 
 model Session {
-  id           Int      @id @default(autoincrement())
+  id           String   @id @default(cuid())
   sessionToken String   @unique
-  userId       Int
+  userId       String
   expires      DateTime
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map(name: "sessions")
 }
 
-model User {  
-  id    Int    @id @default(autoincrement())
+model User {
+  id            String    @id @default(cuid())
   name          String?
   email         String?   @unique
   emailVerified DateTime?
@@ -72,15 +73,15 @@ model VerificationToken {
 }
 
 model Post {
-  id        Int      @id @default(autoincrement())
+  id        String   @id @default(cuid())
   title     String
-  content   String?
+  content   Json?
   published Boolean  @default(false)
   createdAt DateTime @default(now()) @map(name: "created_at")
   updatedAt DateTime @default(now()) @map(name: "updated_at")
-  authorId  Int
-  author    User @relation(fields: [authorId], references: [id])
+  authorId  String
 
+  author User @relation(fields: [authorId], references: [id])
 
   @@map(name: "posts")
 }
